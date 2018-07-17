@@ -17,7 +17,7 @@ public class NeteaseApi {
 //                    "                \"limit\": 3,\n" +
 //                    "                \"csrf_token\":\"kjdjdjdkdfjdk\"\n" +
 //                    "            }";
-//            String uid = "97526496";
+//            String uid = "1306422831";
             UrlParamPair upp = Api.getPlaylistOfUser(uid);
             System.out.println("UrlParamPair:"+upp.toString());
             String req_str = upp.getParas().toJSONString();
