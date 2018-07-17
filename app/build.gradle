@@ -1,13 +1,14 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 28
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
     defaultConfig {
         applicationId "com.wuping.netmusic"
-        minSdkVersion 14
-        targetSdkVersion 28
-        versionCode 1
-        versionName "1.0"
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode rootProject.ext.versionCode
+        versionName rootProject.ext.versionName
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -16,16 +17,21 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
 }
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation 'com.android.support:appcompat-v7:28.0.0-alpha3'
-    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.2'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-    implementation 'com.jakewharton:butterknife:8.8.1'
-    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
-    implementation project(':api')
+    implementation "com.android.support:appcompat-v7:$rootProject.ext.supportLibraryVersion"
+    implementation "com.android.support.constraint:constraint-layout:$rootProject.ext.constraintLayoutVersion"
+    testImplementation "junit:junit:$rootProject.ext.junitVersion"
+    androidTestImplementation "com.android.support.test:runner:$rootProject.ext.runnerVersion"
+    androidTestImplementation "com.android.support.test.espresso:espresso-core:$rootProject.ext.espressoVersion"
+    implementation "com.jakewharton:butterknife:$rootProject.ext.butterknifeVersion"
+    annotationProcessor "com.jakewharton:butterknife-compiler:$rootProject.ext.butterknifeVersion"
+    implementation "com.google.dagger:dagger:$rootProject.ext.daggerVersion"
+    annotationProcessor "com.google.dagger:dagger-compiler:$rootProject.ext.daggerVersion"
+    implementation "com.google.dagger:dagger-android:$rootProject.ext.daggerVersion"
+    implementation "com.google.dagger:dagger-android-support:$rootProject.ext.daggerVersion"
+    annotationProcessor "com.google.dagger:dagger-android-processor:$rootProject.ext.daggerVersion"
 }
