@@ -18,20 +18,36 @@ android {
         }
     }
 
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
+    }
 }
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation "com.android.support:appcompat-v7:$rootProject.ext.supportLibraryVersion"
     implementation "com.android.support.constraint:constraint-layout:$rootProject.ext.constraintLayoutVersion"
+    implementation 'com.android.support:support-v4:28.0.0-alpha3'
     testImplementation "junit:junit:$rootProject.ext.junitVersion"
     androidTestImplementation "com.android.support.test:runner:$rootProject.ext.runnerVersion"
     androidTestImplementation "com.android.support.test.espresso:espresso-core:$rootProject.ext.espressoVersion"
+
+    //butterknife
     implementation "com.jakewharton:butterknife:$rootProject.ext.butterknifeVersion"
     annotationProcessor "com.jakewharton:butterknife-compiler:$rootProject.ext.butterknifeVersion"
-    implementation "com.google.dagger:dagger:$rootProject.ext.daggerVersion"
-    annotationProcessor "com.google.dagger:dagger-compiler:$rootProject.ext.daggerVersion"
-    implementation "com.google.dagger:dagger-android:$rootProject.ext.daggerVersion"
-    implementation "com.google.dagger:dagger-android-support:$rootProject.ext.daggerVersion"
-    annotationProcessor "com.google.dagger:dagger-android-processor:$rootProject.ext.daggerVersion"
+
+
+    implementation "com.android.support:recyclerview-v7:$rootProject.ext.recyclerviewVersion"
+
+    //materialdrawer
+    implementation('com.mikepenz:materialdrawer:6.0.8@aar') {
+        transitive = true
+    }
+    implementation "com.android.support:support-annotations:$rootProject.ext.supportLibraryVersion"
+    implementation "com.android.support:design:$rootProject.ext.supportLibraryVersion"
+
+    //glide
+    implementation "com.github.bumptech.glide:glide:$rootProject.ext.glideVersion"
+    annotationProcessor "com.github.bumptech.glide:compiler:$rootProject.ext.glideVersion"
 }

@@ -8,4 +8,17 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="CustomTheme" parent="MaterialDrawerTheme.Light.TranslucentStatus">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimary</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textColorPrimary">@color/textColorPrimary</item>
+        <!--<item name="android:windowBackground">@color/windowBackground</item>-->
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <!--<item name="android:fitsSystemWindows">true</item>-->
+    </style>
+
 </resources>

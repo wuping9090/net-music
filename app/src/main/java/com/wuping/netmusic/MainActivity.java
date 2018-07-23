@@ -1,25 +1,31 @@
 package com.wuping.netmusic;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import android.widget.Button;
 import android.widget.TextView;
 
-import com.wuping.api.core.NeteaseApi;
+import com.wuping.netmusic.home.HomeActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
 
     @BindView(R.id.tv)
-    TextView tv;
+    Button tv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-        String list = NeteaseApi.getPlaylistOfUser("1306422831");
-        tv.setText(list);
+    }
+
+    @OnClick(R.id.tv)
+    public void onViewClicked() {
+        Intent intent = new Intent(this, HomeActivity.class);
+        startActivity(intent);
     }
 }

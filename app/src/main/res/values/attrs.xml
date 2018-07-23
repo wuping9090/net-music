@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="HomeToolbar">
+        <attr name="leftButtonIcon" format="reference"/>
+        <attr name="discoverIcon" format="reference"/>
+        <attr name="discoverSelectedIcon" format="reference"/>
+        <attr name="musicIcon" format="reference"/>
+        <attr name="musicSelectedIcon" format="reference"/>
+        <attr name="videoIcon" format="reference"/>
+        <attr name="videoSelectedIcon" format="reference"/>
+        <attr name="rightButtonIcon" format="reference"/>
+    </declare-styleable>
+</resources>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="@color/colorPrimaryDark"><!-- press和水波纹的颜色 -->
+    <!--<item>-->
+        <!--&lt;!&ndash;item中可以自定义shape&ndash;&gt;-->
+        <!--<shape-->
+            <!--android:innerRadius="5dp"-->
+            <!--android:shape="oval">-->
+            <!--<solid android:color="@color/colorPrimary" />-->
+            <!--<size-->
+                <!--android:width="80dp"-->
+                <!--android:height="80dp" />-->
+        <!--</shape>-->
+    <!--</item>-->
+    <!--(未点击)状态下的颜色-->
+    <!--<item android:drawable="@color/colorPrimary" />-->
+</ripple>
