@@ -5,14 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="265dp"
-        android:text="推荐页"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <com.youth.banner.Banner
+        android:id="@+id/r_banner"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        app:banner_layout="@layout/banner_layout"
+        app:indicator_margin="5dp"/>
+
 </android.support.constraint.ConstraintLayout>

@@ -24,6 +24,12 @@ android {
     }
 }
 
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+}
+
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation "com.android.support:appcompat-v7:$rootProject.ext.supportLibraryVersion"
@@ -50,4 +56,20 @@ dependencies {
     //glide
     implementation "com.github.bumptech.glide:glide:$rootProject.ext.glideVersion"
     annotationProcessor "com.github.bumptech.glide:compiler:$rootProject.ext.glideVersion"
+
+    //banner
+    implementation "com.youth.banner:banner:$rootProject.ext.bannerVersion"
+
+    //Android 6.0 runtime permission
+    implementation "com.github.tbruyelle:rxpermissions:$rootProject.ext.RxPermissionsVersion"
+
+    //Photo View
+//    implementation "com.github.chrisbanes:PhotoView:$rootProject.ext.PhotoViewVersion"
+//    implementation 'com.github.chrisbanes:PhotoView:latest.release.here'
+    implementation(name:'photoview',ext:'aar')
+
+    //glide-transformations
+    implementation 'jp.wasabeef:glide-transformations:3.3.0'
+    // If you want to use the GPU Filters
+    implementation 'jp.co.cyberagent.android.gpuimage:gpuimage-library:1.4.1'
 }
