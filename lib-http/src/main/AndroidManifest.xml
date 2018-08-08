@@ -1,5 +1,2 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.wp.base">
-
-
-</manifest>
+    package="com.wp.http" />

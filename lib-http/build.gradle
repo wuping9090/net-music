@@ -1,10 +1,4 @@
-def isLibrary = rootProject.ext.modules.fun_base.isLibrary
-if(isLibrary){
-    apply plugin: 'com.android.library'
-}else {
-    apply plugin: 'com.android.application'
-}
-
+apply plugin: 'com.android.library'
 
 android {
     compileSdkVersion 28
@@ -12,31 +6,12 @@ android {
 
 
     defaultConfig {
-        if(!isLibrary){
-            applicationId "com.wp.base"
-        }
-
         minSdkVersion 14
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-
-    }
-
-    sourceSets {
-        main {
-            if (isLibrary) {
-                manifest.srcFile 'src/main/AndroidManifest.xml'
-                java {
-//                    exclude 'debug/**'
-                }
-            } else {
-                manifest.srcFile 'src/main/module/AndroidManifest.xml'
-            }
-
-        }
 
     }
 
@@ -50,11 +25,10 @@ android {
 }
 
 dependencies {
+
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation "com.android.support:appcompat-v7:$rootProject.ext.supportLibraryVersion"
     testImplementation "junit:junit:$rootProject.ext.junitVersion"
     androidTestImplementation "com.android.support.test:runner:$rootProject.ext.runnerVersion"
     androidTestImplementation "com.android.support.test.espresso:espresso-core:$rootProject.ext.espressoVersion"
-    implementation project(':lib-http')
-    implementation "com.orhanobut:logger:$rootProject.ext.loggerVersion"
 }

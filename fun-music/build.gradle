@@ -1,4 +1,9 @@
-apply plugin: 'com.android.application'
+def isLibrary = rootProject.ext.modules.fun_music.isLibrary
+if(isLibrary){
+    apply plugin: 'com.android.library'
+}else {
+    apply plugin: 'com.android.application'
+}
 
 android {
     compileSdkVersion 28
@@ -6,13 +11,31 @@ android {
 
 
     defaultConfig {
-        applicationId "com.wp.music"
+        if(!isLibrary){
+            applicationId "com.wp.music"
+        }
+
         minSdkVersion 14
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+
+    sourceSets {
+        main {
+            if (isLibrary) {
+                manifest.srcFile 'src/main/AndroidManifest.xml'
+                java {
+//                    exclude 'debug/**'
+                }
+            } else {
+                manifest.srcFile 'src/main/module/AndroidManifest.xml'
+            }
+
+        }
 
     }
 
@@ -26,11 +49,36 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation "com.android.support:appcompat-v7:$rootProject.ext.supportLibraryVersion"
+    implementation "com.android.support.constraint:constraint-layout:$rootProject.ext.constraintLayoutVersion"
+    implementation "com.android.support:support-v4:$rootProject.ext.supportLibraryVersion"
+    testImplementation "junit:junit:$rootProject.ext.junitVersion"
+    androidTestImplementation "com.android.support.test:runner:$rootProject.ext.runnerVersion"
+    androidTestImplementation "com.android.support.test.espresso:espresso-core:$rootProject.ext.espressoVersion"
 
-    implementation 'com.android.support:appcompat-v7:28.0.0-beta01'
-    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.2'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+    implementation "com.android.support:support-annotations:$rootProject.ext.supportLibraryVersion"
+    implementation "com.android.support:design:$rootProject.ext.supportLibraryVersion"
+
+    //glide
+    implementation "com.github.bumptech.glide:glide:$rootProject.ext.glideVersion"
+    annotationProcessor "com.github.bumptech.glide:compiler:$rootProject.ext.glideVersion"
+
+    //banner
+    implementation "com.youth.banner:banner:$rootProject.ext.bannerVersion"
+
+    //Android 6.0 runtime permission
+    implementation "com.github.tbruyelle:rxpermissions:$rootProject.ext.RxPermissionsVersion"
+
+    //glide-transformations
+    implementation 'jp.wasabeef:glide-transformations:3.3.0'
+    // If you want to use the GPU Filters
+    implementation 'jp.co.cyberagent.android.gpuimage:gpuimage-library:1.4.1'
+
+    //rxJava rxAndroid
+    implementation "io.reactivex.rxjava2:rxjava:$rootProject.ext.rxJavaVersion"
+    implementation "io.reactivex.rxjava2:rxandroid:$rootProject.ext.rxAndroidVersion"
+
+    api project(':fun-base')
 }

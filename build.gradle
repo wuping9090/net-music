@@ -50,4 +50,12 @@ ext {
     tangramVersion = '2.0.5@aar'
     rxJavaVersion = '2.1.17'
     rxAndroidVersion = '2.0.2'
+    loggerVersion = '2.2.0'
+
+    modules=[
+            fun_music:[isLibrary: true],
+            fun_discover:[isLibrary: true],
+            fun_video:[isLibrary: true],
+            fun_base:[isLibrary: true]
+    ]
 }

@@ -1,2 +1,2 @@
-include ':app', ':fun-discover', ':fun-music', ':fun-video', ':fun-video', ':fun-base'
+include ':app', ':fun-discover', ':fun-music', ':fun-video', ':fun-base', ':lib-http'
 

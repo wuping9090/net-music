@@ -1,7 +1,6 @@
 package com.wuping.netmusic.home;
 
 import android.os.Bundle;
-import android.support.design.widget.TabLayout;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
@@ -27,8 +26,6 @@ public class HomeActivity extends BaseActivity {
 
     @BindView(R.id.toolbar)
     HomeToolbar toolbar;
-    @BindView(R.id.tabLayout)
-    TabLayout tabLayout;
     @BindView(R.id.viewPager)
     ViewPager viewPager;
     private Drawer drawer;
@@ -41,13 +38,10 @@ public class HomeActivity extends BaseActivity {
         initToolbar();
         initDrawer();
         initContent();
-
     }
 
     private void initContent() {
-
         viewPager.setAdapter(new MyFragmentPagerAdapter(getSupportFragmentManager()));
-        tabLayout.setupWithViewPager(viewPager);
 
     }
 

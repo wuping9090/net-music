@@ -34,7 +34,7 @@ dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation "com.android.support:appcompat-v7:$rootProject.ext.supportLibraryVersion"
     implementation "com.android.support.constraint:constraint-layout:$rootProject.ext.constraintLayoutVersion"
-    implementation 'com.android.support:support-v4:28.0.0-alpha3'
+    implementation "com.android.support:support-v4:$rootProject.ext.supportLibraryVersion"
     testImplementation "junit:junit:$rootProject.ext.junitVersion"
     androidTestImplementation "com.android.support.test:runner:$rootProject.ext.runnerVersion"
     androidTestImplementation "com.android.support.test.espresso:espresso-core:$rootProject.ext.espressoVersion"
@@ -42,8 +42,6 @@ dependencies {
     //butterknife
     implementation "com.jakewharton:butterknife:$rootProject.ext.butterknifeVersion"
     annotationProcessor "com.jakewharton:butterknife-compiler:$rootProject.ext.butterknifeVersion"
-
-
     implementation "com.android.support:recyclerview-v7:$rootProject.ext.recyclerviewVersion"
 
     //materialdrawer
@@ -64,12 +62,15 @@ dependencies {
     implementation "com.github.tbruyelle:rxpermissions:$rootProject.ext.RxPermissionsVersion"
 
     //Photo View
-//    implementation "com.github.chrisbanes:PhotoView:$rootProject.ext.PhotoViewVersion"
-//    implementation 'com.github.chrisbanes:PhotoView:latest.release.here'
-    implementation(name:'photoview',ext:'aar')
+
+    //    implementation "com.github.chrisbanes:PhotoView:$rootProject.ext.PhotoViewVersion"
+
+    //    implementation 'com.github.chrisbanes:PhotoView:latest.release.here'
+    implementation(name: 'photoview', ext: 'aar')
 
     //glide-transformations
     implementation 'jp.wasabeef:glide-transformations:3.3.0'
+
     // If you want to use the GPU Filters
     implementation 'jp.co.cyberagent.android.gpuimage:gpuimage-library:1.4.1'
 
@@ -79,4 +80,7 @@ dependencies {
     //rxJava rxAndroid
     implementation "io.reactivex.rxjava2:rxjava:$rootProject.ext.rxJavaVersion"
     implementation "io.reactivex.rxjava2:rxandroid:$rootProject.ext.rxAndroidVersion"
+    implementation project(':fun-discover')
+    implementation project(':fun-music')
+    implementation project(':fun-video')
 }
